@@ -1,0 +1,37 @@
+Metadata-Version: 2.4
+Name: multi-agent-ml-ops
+Version: 0.1.0
+Summary: Production-grade multi-agent AI system with TensorFlow and LangGraph
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: fastapi>=0.115
+Requires-Dist: uvicorn[standard]>=0.30
+Requires-Dist: pydantic>=2.9
+Requires-Dist: langgraph<0.3,>=0.2
+Requires-Dist: langchain-core>=0.3
+Requires-Dist: tensorflow-cpu>=2.16
+Requires-Dist: httpx>=0.27
+Requires-Dist: requests>=2.31
+Requires-Dist: pytest>=8.3
+Requires-Dist: pytest-asyncio>=0.23
+Requires-Dist: pytest-cov>=5.0
+Requires-Dist: ruff>=0.6
+Requires-Dist: mypy>=1.11
+
+# Multi-Agent ML Ops
+
+This project implements a production-style multi-agent AI system using LangGraph, TensorFlow, FastAPI, pytest, and GitHub Actions.
+
+## Architecture
+
+- Supervisor agent orchestrates specialist agents.
+- Specialist agents provide classification, sentiment, and summarization.
+- FastAPI serves a REST API with tracing and health endpoints.
+- A notebook demonstrates training and deployment integration.
+
+## Quick Start
+
+```bash
+pip install -e .
+uvicorn multi_agent_ml_ops.api.app:app --reload
+```
